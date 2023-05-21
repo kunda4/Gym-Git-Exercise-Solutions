@@ -85,3 +85,85 @@ To https://github.com/kunda4/git-exercises.git
 branch 'dev' set up to track 'origin/dev'.
 Andelas-MBP:git-exercises andelarwanda$ 
 ```
+## Bundle 1
+### Exercice 2
+```bash
+Andelas-MBP:git-exercises andelarwanda$ touch home.html
+Andelas-MBP:git-exercises andelarwanda$ git add .home.html
+fatal: pathspec '.home.html' did not match any files
+Andelas-MBP:git-exercises andelarwanda$ git add home.html
+Andelas-MBP:git-exercises andelarwanda$ git stash save "home.html file"
+Saved working directory and index state On dev: home.html file
+Andelas-MBP:git-exercises andelarwanda$ touch about.html
+Andelas-MBP:git-exercises andelarwanda$ git add about.html
+Andelas-MBP:git-exercises andelarwanda$ git stash save "about.html file"
+Saved working directory and index state On dev: about.html file
+Andelas-MBP:git-exercises andelarwanda$ git stash list
+stash@{0}: On dev: about.html file
+stash@{1}: On dev: home.html file
+Andelas-MBP:git-exercises andelarwanda$ touch team.html
+Andelas-MBP:git-exercises andelarwanda$ git add team.html
+Andelas-MBP:git-exercises andelarwanda$ git stash save "team.html file"
+Saved working directory and index state On dev: team.html file
+Andelas-MBP:git-exercises andelarwanda$ git stash list
+stash@{0}: On dev: team.html file
+stash@{1}: On dev: about.html file
+stash@{2}: On dev: home.html file
+Andelas-MBP:git-exercises andelarwanda$ git stash pop stash@{1}
+On branch dev
+Your branch is up to date with 'origin/dev'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+
+Dropped stash@{1} (63e5c0e84d0c90ec7e85df78d8ad89fd0cd49ed4)
+Andelas-MBP:git-exercises andelarwanda$ git stash list
+stash@{0}: On dev: team.html file
+stash@{1}: On dev: home.html file
+Andelas-MBP:git-exercises andelarwanda$ git stash pop stash@{1}
+On branch dev
+Your branch is up to date with 'origin/dev'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+        new file:   home.html
+
+Dropped stash@{1} (f0a6d2ca4207f044f2346e33ea9375f0d076a9d2)
+Andelas-MBP:git-exercises andelarwanda$ git add .
+Andelas-MBP:git-exercises andelarwanda$ git commit -m "unstash about and home page"
+[dev 3d6fb62] unstash about and home page
+ 2 files changed, 24 insertions(+)
+ create mode 100644 about.html
+ create mode 100644 home.html
+Andelas-MBP:git-exercises andelarwanda$ git push origin dev
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 546 bytes | 546.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/kunda4/git-exercises.git
+   67b6db9..3d6fb62  dev -> dev
+Andelas-MBP:git-exercises andelarwanda$ git stash list
+stash@{0}: On dev: team.html file
+Andelas-MBP:git-exercises andelarwanda$ git stash pop stash@{0}
+On branch dev
+Your branch is up to date with 'origin/dev'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   team.html
+
+Dropped stash@{0} (39b8453c80a6cbc3c3e80cd78bc2e95363b96c9d)
+Andelas-MBP:git-exercises andelarwanda$ git reset --hard
+HEAD is now at 3d6fb62 unstash about and home page
+Andelas-MBP:git-exercises andelarwanda$ git status
+On branch dev
+Your branch is up to date with 'origin/dev'.
+
+nothing to commit, working tree clean
+Andelas-MBP:git-exercises andelarwanda$ 
+```
