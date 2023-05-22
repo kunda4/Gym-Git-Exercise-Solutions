@@ -798,3 +798,37 @@ To https://github.com/kunda4/git-exercises.git
 branch 'ft/squashing' set up to track 'origin/ft/squashing'.
 Andelas-MBP:git-exercises andelarwanda$ 
 ```
+## Bundle 5
+### Exercice 2
+```bash
+Andelas-MBP:git-cafe-exercise andelarwanda$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .vscode/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Andelas-MBP:git-cafe-exercise andelarwanda$ git add .
+Andelas-MBP:git-cafe-exercise andelarwanda$ git commit -m "modify index.html"
+[main 2c13946] modify index.html
+ 2 files changed, 4 insertions(+), 1 deletion(-)
+ create mode 100644 .vscode/settings.json
+Andelas-MBP:git-cafe-exercise andelarwanda$ git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (5/5), 483 bytes | 483.00 KiB/s, done.
+Total 5 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/kunda4/git-cafe-exercise.git
+   d1d3f9c..2c13946  main -> main
+Andelas-MBP:git-cafe-exercise andelarwanda$ 
+```
