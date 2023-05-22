@@ -167,3 +167,39 @@ Your branch is up to date with 'origin/dev'.
 nothing to commit, working tree clean
 Andelas-MBP:git-exercises andelarwanda$ 
 ```
+## Bundle 2
+### Exercice 1
+```bash
+Andelas-MBP:git-exercises andelarwanda$ git checkout -b ft/bundle-2
+Switched to a new branch 'ft/bundle-2'
+Andelas-MBP:git-exercises andelarwanda$ touch services.html
+Andelas-MBP:git-exercises andelarwanda$ git add .
+Andelas-MBP:git-exercises andelarwanda$ git commit -m "add services.html file"
+[ft/bundle-2 a4a372a] add services.html file
+ 1 file changed, 12 insertions(+)
+ create mode 100644 services.html
+Andelas-MBP:git-exercises andelarwanda$ git push
+fatal: The current branch ft/bundle-2 has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/bundle-2
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+Andelas-MBP:git-exercises andelarwanda$  git push --set-upstream origin ft/bundle-2
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 486 bytes | 486.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'ft/bundle-2' on GitHub by visiting:
+remote:      https://github.com/kunda4/git-exercises/pull/new/ft/bundle-2
+remote: 
+To https://github.com/kunda4/git-exercises.git
+ * [new branch]      ft/bundle-2 -> ft/bundle-2
+branch 'ft/bundle-2' set up to track 'origin/ft/bundle-2'.
+```
