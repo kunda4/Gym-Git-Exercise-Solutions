@@ -203,3 +203,73 @@ To https://github.com/kunda4/git-exercises.git
  * [new branch]      ft/bundle-2 -> ft/bundle-2
 branch 'ft/bundle-2' set up to track 'origin/ft/bundle-2'.
 ```
+## Bundle 2
+### Exercice 2
+```bash
+Andelas-MBP:git-exercises andelarwanda$ git checkout -b ft/service-redesign
+Switched to a new branch 'ft/service-redesign'
+Andelas-MBP:git-exercises andelarwanda$ git add .
+Andelas-MBP:git-exercises andelarwanda$ git commit "feat: add changes to services.html"
+error: pathspec 'feat: add changes to services.html' did not match any file(s) known to git
+Andelas-MBP:git-exercises andelarwanda$ git commit -m "feat: add changes to services.html"
+[ft/service-redesign 83e78a1] feat: add changes to services.html
+ 1 file changed, 7 insertions(+)
+Andelas-MBP:git-exercises andelarwanda$ git push
+fatal: The current branch ft/service-redesign has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/service-redesign
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+Andelas-MBP:git-exercises andelarwanda$ git push --set-upstream origin ft/service-redesign
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 376 bytes | 376.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote: 
+remote: Create a pull request for 'ft/service-redesign' on GitHub by visiting:
+remote:      https://github.com/kunda4/git-exercises/pull/new/ft/service-redesign
+remote: 
+To https://github.com/kunda4/git-exercises.git
+ * [new branch]      ft/service-redesign -> ft/service-redesign
+branch 'ft/service-redesign' set up to track 'origin/ft/service-redesign'.
+Andelas-MBP:git-exercises andelarwanda$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+Andelas-MBP:git-exercises andelarwanda$ git add .
+Andelas-MBP:git-exercises andelarwanda$ git commit -m "add some changes on services.html"
+[main 2817ff5] add some changes on services.html
+ 1 file changed, 7 insertions(+)
+Andelas-MBP:git-exercises andelarwanda$ git push origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 358 bytes | 358.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/kunda4/git-exercises.git
+   dd64ec5..2817ff5  main -> main
+Andelas-MBP:git-exercises andelarwanda$ git checkout ft/service-redesign
+Switched to branch 'ft/service-redesign'
+Your branch is up to date with 'origin/ft/service-redesign'.
+Andelas-MBP:git-exercises andelarwanda$ git merge main
+Auto-merging services.html
+CONFLICT (content): Merge conflict in services.html
+Automatic merge failed; fix conflicts and then commit the result.
+Andelas-MBP:git-exercises andelarwanda$ git add .
+Andelas-MBP:git-exercises andelarwanda$ git commit -m "feat: fix(conflict)"
+[ft/service-redesign 688c2bb] feat: fix(conflict)
+Andelas-MBP:git-exercises andelarwanda$ git push
+Enumerating objects: 1, done.
+Counting objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 252 bytes | 252.00 KiB/s, done.
+Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/kunda4/git-exercises.git
+   83e78a1..688c2bb  ft/service-redesign -> ft/service-redesign
+```
