@@ -601,3 +601,65 @@ To https://github.com/kunda4/git-exercises.git
 branch 'ft/home-page-redesign' set up to track 'origin/ft/home-page-redesign'.
 Andelas-MBP:git-exercises andelarwanda$ 
 ```
+## Bundle 4
+### Exercice 1
+```bash
+Andelas-MBP:git-exercises andelarwanda$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+Andelas-MBP:git-exercises andelarwanda$ git remote add git-copy https://github.com/kunda4/git-exercises-clone.git
+Andelas-MBP:git-exercises andelarwanda$ git remote
+git-copy
+origin
+Andelas-MBP:git-exercises andelarwanda$ git add .
+Andelas-MBP:git-exercises andelarwanda$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   home.html
+
+Andelas-MBP:git-exercises andelarwanda$ git commit -m "modify home.html"
+[main c37fadc] modify home.html
+ 1 file changed, 1 insertion(+)
+Andelas-MBP:git-exercises andelarwanda$ git push origin
+To https://github.com/kunda4/git-exercises.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/kunda4/git-exercises.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+Andelas-MBP:git-exercises andelarwanda$ git push git-copy
+Enumerating objects: 21, done.
+Counting objects: 100% (21/21), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (19/19), done.
+Writing objects: 100% (21/21), 2.92 KiB | 1.46 MiB/s, done.
+Total 21 (delta 12), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (12/12), done.
+To https://github.com/kunda4/git-exercises-clone.git
+ * [new branch]      main -> main
+Andelas-MBP:git-exercises andelarwanda$ git push origin
+To https://github.com/kunda4/git-exercises.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/kunda4/git-exercises.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+Andelas-MBP:git-exercises andelarwanda$ git push origin --force
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 340 bytes | 340.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/kunda4/git-exercises.git
+ + a3fff70...c37fadc main -> main (forced update)
+Andelas-MBP:git-exercises andelarwanda$ 
+```
