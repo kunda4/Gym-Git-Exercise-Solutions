@@ -273,3 +273,189 @@ Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
 To https://github.com/kunda4/git-exercises.git
    83e78a1..688c2bb  ft/service-redesign -> ft/service-redesign
 ```
+## Bundle 3
+### Exercice 1
+```bash
+Andelas-MBP:git-exercises andelarwanda$ git checkout -b ft/team-page
+Switched to a new branch 'ft/team-page'
+Andelas-MBP:git-exercises andelarwanda$ touch team.html
+Andelas-MBP:git-exercises andelarwanda$ git add .
+Andelas-MBP:git-exercises andelarwanda$ git commit -m "feat: Create team.html"
+[ft/team-page 44a30ee] feat: Create team.html
+ 1 file changed, 12 insertions(+)
+ create mode 100644 team.html
+Andelas-MBP:git-exercises andelarwanda$ git push
+fatal: The current branch ft/team-page has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/team-page
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+Andelas-MBP:git-exercises andelarwanda$ git push --set-upstream origin ft/team-page
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 483 bytes | 483.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'ft/team-page' on GitHub by visiting:
+remote:      https://github.com/kunda4/git-exercises/pull/new/ft/team-page
+remote: 
+To https://github.com/kunda4/git-exercises.git
+ * [new branch]      ft/team-page -> ft/team-page
+branch 'ft/team-page' set up to track 'origin/ft/team-page'.
+Andelas-MBP:git-exercises andelarwanda$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+Andelas-MBP:git-exercises andelarwanda$ git checkout -b ft/contact-page
+Switched to a new branch 'ft/contact-page'
+Andelas-MBP:git-exercises andelarwanda$ git checkout ft/team-page
+Switched to branch 'ft/team-page'
+Your branch is up to date with 'origin/ft/team-page'.
+Andelas-MBP:git-exercises andelarwanda$ git log
+commit 44a30ee06fd18c09986e8f4892509f9ca9277e84 (HEAD -> ft/team-page, origin/ft/team-page)
+Author: Agnes IRADUKUNDA <101483232+kunda4@users.noreply.github.com>
+Date:   Mon May 22 03:11:33 2023 +0200
+
+    feat: Create team.html
+
+commit 688c2bb98abba46ec2bc0488f93145e8a86652a4 (origin/ft/service-redesign, ft/service-redesign)
+Merge: 83e78a1 2817ff5
+Author: Agnes IRADUKUNDA <101483232+kunda4@users.noreply.github.com>
+Date:   Mon May 22 02:45:18 2023 +0200
+
+    feat: fix(conflict)
+
+commit 2817ff56691a594e61ddcec391d3fb452513d83b (origin/main, main, ft/contact-page)
+Author: Agnes IRADUKUNDA <101483232+kunda4@users.noreply.github.com>
+Date:   Mon May 22 02:33:09 2023 +0200
+
+    add some changes on services.html
+
+commit 83e78a13c31348e631374059fa08f314e43e5c9c
+Author: Agnes IRADUKUNDA <101483232+kunda4@users.noreply.github.com>
+Date:   Mon May 22 02:28:19 2023 +0200
+
+Andelas-MBP:git-exercises andelarwanda$ git branch
+  dev
+  ft/bundle-2
+  ft/contact-page
+  ft/service-redesign
+* ft/team-page
+  main
+Andelas-MBP:git-exercises andelarwanda$ git checkout ft/contact-page
+Switched to branch 'ft/contact-page'
+Andelas-MBP:git-exercises andelarwanda$ git cherry-pick 44a30ee06fd18c09986e8f4892509f9ca9277e84 
+[ft/contact-page 04eae5a] feat: Create team.html
+ Date: Mon May 22 03:11:33 2023 +0200
+ 1 file changed, 12 insertions(+)
+ create mode 100644 team.html
+Andelas-MBP:git-exercises andelarwanda$ touch contact.html
+Andelas-MBP:git-exercises andelarwanda$ git add .
+Andelas-MBP:git-exercises andelarwanda$ git commit -m "feat: add contact.html file"
+[ft/contact-page 0542558] feat: add contact.html file
+ 1 file changed, 12 insertions(+)
+ create mode 100644 contact.html
+Andelas-MBP:git-exercises andelarwanda$ git push
+fatal: The current branch ft/contact-page has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/contact-page
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+Andelas-MBP:git-exercises andelarwanda$ git push --set-upstream origin ft/contact-page
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 765 bytes | 765.00 KiB/s, done.
+Total 6 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'ft/contact-page' on GitHub by visiting:
+remote:      https://github.com/kunda4/git-exercises/pull/new/ft/contact-page
+remote: 
+To https://github.com/kunda4/git-exercises.git
+ * [new branch]      ft/contact-page -> ft/contact-page
+branch 'ft/contact-page' set up to track 'origin/ft/contact-page'.
+Andelas-MBP:git-exercises andelarwanda$ git checkout -b ft/faq-page
+Switched to a new branch 'ft/faq-page'
+Andelas-MBP:git-exercises andelarwanda$ touch faq.html
+Andelas-MBP:git-exercises andelarwanda$ git add .
+Andelas-MBP:git-exercises andelarwanda$ git commit -m "add new file faq.html"
+[ft/faq-page 36d9361] add new file faq.html
+ 1 file changed, 12 insertions(+)
+ create mode 100644 faq.html
+Andelas-MBP:git-exercises andelarwanda$ git push
+fatal: The current branch ft/faq-page has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/faq-page
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+Andelas-MBP:git-exercises andelarwanda$  git push --set-upstream origin ft/faq-page
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 477 bytes | 477.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'ft/faq-page' on GitHub by visiting:
+remote:      https://github.com/kunda4/git-exercises/pull/new/ft/faq-page
+remote: 
+To https://github.com/kunda4/git-exercises.git
+ * [new branch]      ft/faq-page -> ft/faq-page
+branch 'ft/faq-page' set up to track 'origin/ft/faq-page'.
+Andelas-MBP:git-exercises andelarwanda$ git log
+commit 36d9361c2973b031bc95e5f5fce9cef171ab1918 (HEAD -> ft/faq-page, origin/ft/faq-page)
+Author: Agnes IRADUKUNDA <101483232+kunda4@users.noreply.github.com>
+Date:   Mon May 22 03:44:15 2023 +0200
+
+    add new file faq.html
+
+commit 0542558304ba3e4f1fb85ce67858e4f21a43a0f9 (origin/ft/contact-page, ft/contact-page)
+Author: Agnes IRADUKUNDA <101483232+kunda4@users.noreply.github.com>
+Date:   Mon May 22 03:35:33 2023 +0200
+
+    feat: add contact.html file
+
+commit 04eae5a279f2f12c5d5d9f8441906185b804299e
+Author: Agnes IRADUKUNDA <101483232+kunda4@users.noreply.github.com>
+Date:   Mon May 22 03:11:33 2023 +0200
+
+    feat: Create team.html
+
+commit 2817ff56691a594e61ddcec391d3fb452513d83b (origin/main, main)
+Author: Agnes IRADUKUNDA <101483232+kunda4@users.noreply.github.com>
+Date:   Mon May 22 02:33:09 2023 +0200
+
+    add some changes on services.html
+
+commit dd64ec5e9678a6d870889c170737cf5ece5fd343
+Merge: e8e872b a4a372a
+Author: Agnes IRADUKUNDA <101483232+kunda4@users.noreply.github.com>
+Andelas-MBP:git-exercises andelarwanda$ git revert 04eae5a279f2f12c5d5d9f8441906185b804299e
+[ft/faq-page 9c1659f] Revert "feat: Create team.html"
+ 1 file changed, 12 deletions(-)
+ delete mode 100644 team.html
+Andelas-MBP:git-exercises andelarwanda$ git push
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 305 bytes | 305.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/kunda4/git-exercises.git
+   36d9361..9c1659f  ft/faq-page -> ft/faq-page
+   ```
