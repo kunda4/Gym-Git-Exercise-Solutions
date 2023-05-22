@@ -459,3 +459,145 @@ remote: Resolving deltas: 100% (1/1), completed with 1 local object.
 To https://github.com/kunda4/git-exercises.git
    36d9361..9c1659f  ft/faq-page -> ft/faq-page
    ```
+## Bundle 3
+### Exercice 2
+```bash
+Andelas-MBP:git-exercises andelarwanda$ git checkout -b ft/home-page-redesign
+Switched to a new branch 'ft/home-page-redesign'
+Andelas-MBP:git-exercises andelarwanda$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+Andelas-MBP:git-exercises andelarwanda$ git add .
+Andelas-MBP:git-exercises andelarwanda$ git commit -m "add homepage content"
+[main e588c26] add homepage content
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+Andelas-MBP:git-exercises andelarwanda$ git push origin main
+To https://github.com/kunda4/git-exercises.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/kunda4/git-exercises.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+Andelas-MBP:git-exercises andelarwanda$ git push origin main --force
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 401 bytes | 401.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/kunda4/git-exercises.git
+ + 244319e...e588c26 main -> main (forced update)
+Andelas-MBP:git-exercises andelarwanda$ git branch
+  dev
+  ft/bundle-2
+  ft/contact-page
+  ft/faq-page
+  ft/home-page-redesign
+  ft/service-redesign
+  ft/team-page
+* main
+Andelas-MBP:git-exercises andelarwanda$ git checkout ft/home-page-redesign
+Switched to branch 'ft/home-page-redesign'
+Andelas-MBP:git-exercises andelarwanda$ git log
+commit 9c1659f83d40334e5c7d1ccc1837a2d584398d16 (HEAD -> ft/home-page-redesign, origin/ft/faq-page, ft/faq-page)
+Author: Agnes IRADUKUNDA <101483232+kunda4@users.noreply.github.com>
+Date:   Mon May 22 03:51:05 2023 +0200
+
+    Revert "feat: Create team.html"
+    
+    This reverts commit 04eae5a279f2f12c5d5d9f8441906185b804299e.
+
+commit 36d9361c2973b031bc95e5f5fce9cef171ab1918
+Author: Agnes IRADUKUNDA <101483232+kunda4@users.noreply.github.com>
+Date:   Mon May 22 03:44:15 2023 +0200
+
+    add new file faq.html
+
+commit 0542558304ba3e4f1fb85ce67858e4f21a43a0f9 (origin/ft/contact-page, ft/contact-page)
+Author: Agnes IRADUKUNDA <101483232+kunda4@users.noreply.github.com>
+Date:   Mon May 22 03:35:33 2023 +0200
+
+    feat: add contact.html file
+
+commit 04eae5a279f2f12c5d5d9f8441906185b804299e
+Author: Agnes IRADUKUNDA <101483232+kunda4@users.noreply.github.com>
+Date:   Mon May 22 03:11:33 2023 +0200
+
+    feat: Create team.html
+
+commit 2817ff56691a594e61ddcec391d3fb452513d83b
+Author: Agnes IRADUKUNDA <101483232+kunda4@users.noreply.github.com>
+Date:   Mon May 22 02:33:09 2023 +0200
+
+    add some changes on services.html
+
+commit dd64ec5e9678a6d870889c170737cf5ece5fd343
+Merge: e8e872b a4a372a
+Author: Agnes IRADUKUNDA <101483232+kunda4@users.noreply.github.com>
+Date:   Mon May 22 02:23:35 2023 +0200
+
+    Merge pull request #2 from kunda4/ft/bundle-2
+    
+    Bundle2 #Exercise1
+
+commit e8e872bd4ab5baa17a85351ff122e353bed7dc5f
+Merge: 67b6db9 3d6fb62
+Author: Agnes IRADUKUNDA <101483232+kunda4@users.noreply.github.com>
+Date:   Mon May 22 02:10:42 2023 +0200
+
+    Merge pull request #1 from kunda4/dev
+    
+    feat: stash files and retore
+
+commit a4a372a5a7501a95f8fc4cd802f75286d4c5b98a (origin/ft/bundle-2, ft/bundle-2)
+Author: Agnes IRADUKUNDA <101483232+kunda4@users.noreply.github.com>
+Date:   Mon May 22 02:09:26 2023 +0200
+
+    add services.html file
+
+commit 3d6fb62673354abf7fd3fcc03b4a1b9023bb0eec (origin/dev, dev)
+Author: Agnes IRADUKUNDA <101483232+kunda4@users.noreply.github.com>
+Date:   Mon May 22 01:48:44 2023 +0200
+
+    unstash about and home page
+
+commit 67b6db9e44541ceb7842c34ce8deb5ede21234d2
+Author: Agnes IRADUKUNDA <101483232+kunda4@users.noreply.github.com>
+Date:   Mon May 22 01:22:57 2023 +0200
+
+    init project
+Andelas-MBP:git-exercises andelarwanda$ git rebase main
+Successfully rebased and updated refs/heads/ft/home-page-redesign.
+Andelas-MBP:git-exercises andelarwanda$ git add .
+Andelas-MBP:git-exercises andelarwanda$ git commit -m "feat: rebase and add change to home page"
+[ft/home-page-redesign ff98592] feat: rebase and add change to home page
+ 1 file changed, 5 insertions(+)
+Andelas-MBP:git-exercises andelarwanda$ git push
+fatal: The current branch ft/home-page-redesign has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/home-page-redesign
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+Andelas-MBP:git-exercises andelarwanda$  git push --set-upstream origin ft/home-page-redesign
+Enumerating objects: 16, done.
+Counting objects: 100% (16/16), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (14/14), done.
+Writing objects: 100% (14/14), 1.91 KiB | 1.91 MiB/s, done.
+Total 14 (delta 7), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (7/7), done.
+remote: 
+remote: Create a pull request for 'ft/home-page-redesign' on GitHub by visiting:
+remote:      https://github.com/kunda4/git-exercises/pull/new/ft/home-page-redesign
+remote: 
+To https://github.com/kunda4/git-exercises.git
+ * [new branch]      ft/home-page-redesign -> ft/home-page-redesign
+branch 'ft/home-page-redesign' set up to track 'origin/ft/home-page-redesign'.
+Andelas-MBP:git-exercises andelarwanda$ 
+```
