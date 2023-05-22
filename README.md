@@ -663,3 +663,138 @@ To https://github.com/kunda4/git-exercises.git
  + a3fff70...c37fadc main -> main (forced update)
 Andelas-MBP:git-exercises andelarwanda$ 
 ```
+## Bundle 4
+### Exercice 2
+```bash
+Andelas-MBP:git-exercises andelarwanda$ git checkout -b ft/footer
+Switched to a new branch 'ft/footer'
+Andelas-MBP:git-exercises andelarwanda$ touch footer.html
+Andelas-MBP:git-exercises andelarwanda$ git add .
+Andelas-MBP:git-exercises andelarwanda$ git commit -m "create footer.html"
+[ft/footer 6ce70f4] create footer.html
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 footer.html
+Andelas-MBP:git-exercises andelarwanda$ git add.
+git: 'add.' is not a git command. See 'git --help'.
+
+The most similar command is
+        add
+Andelas-MBP:git-exercises andelarwanda$ git add .
+Andelas-MBP:git-exercises andelarwanda$ git commit -m "Add contents in footer.html"
+[ft/footer 35c2f21] Add contents in footer.html
+ 1 file changed, 17 insertions(+)
+Andelas-MBP:git-exercises andelarwanda$ git push
+fatal: The current branch ft/footer has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/footer
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+Andelas-MBP:git-exercises andelarwanda$  git push --set-upstream origin ft/footer
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (6/6), 819 bytes | 819.00 KiB/s, done.
+Total 6 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'ft/footer' on GitHub by visiting:
+remote:      https://github.com/kunda4/git-exercises/pull/new/ft/footer
+remote: 
+To https://github.com/kunda4/git-exercises.git
+ * [new branch]      ft/footer -> ft/footer
+branch 'ft/footer' set up to track 'origin/ft/footer'.
+Andelas-MBP:git-exercises andelarwanda$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+Andelas-MBP:git-exercises andelarwanda$ git checkout -b ft/squashing
+Switched to a new branch 'ft/squashing'
+Andelas-MBP:git-exercises andelarwanda$ git merge --squash ft/footer
+Updating c37fadc..35c2f21
+Fast-forward
+Squash commit -- not updating HEAD
+ footer.html | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+ create mode 100644 footer.html
+Andelas-MBP:git-exercises andelarwanda$ git log
+commit c37fadcb988c4b297903891f5facc76cf81c4434 (HEAD -> ft/squashing, origin/main, git-copy/main, main)
+Author: Agnes IRADUKUNDA <101483232+kunda4@users.noreply.github.com>
+Date:   Mon May 22 04:35:21 2023 +0200
+
+    modify home.html
+
+commit e588c268f5ba0d39875ee216f83573ea5b6b3b18
+Author: Agnes IRADUKUNDA <101483232+kunda4@users.noreply.github.com>
+Date:   Mon May 22 04:08:04 2023 +0200
+
+    add homepage content
+
+commit 2817ff56691a594e61ddcec391d3fb452513d83b
+Author: Agnes IRADUKUNDA <101483232+kunda4@users.noreply.github.com>
+Date:   Mon May 22 02:33:09 2023 +0200
+
+    add some changes on services.html
+
+commit dd64ec5e9678a6d870889c170737cf5ece5fd343
+Merge: e8e872b a4a372a
+Author: Agnes IRADUKUNDA <101483232+kunda4@users.noreply.github.com>
+Date:   Mon May 22 02:23:35 2023 +0200
+
+Andelas-MBP:git-exercises andelarwanda$ git add .
+Andelas-MBP:git-exercises andelarwanda$ git commit -m "footer changes squashing"
+[ft/squashing 8747673] footer changes squashing
+ 1 file changed, 17 insertions(+)
+ create mode 100644 footer.html
+Andelas-MBP:git-exercises andelarwanda$ git log
+commit 87476734317722786c4ab6810c4b4285cdb88b33 (HEAD -> ft/squashing)
+Author: Agnes IRADUKUNDA <101483232+kunda4@users.noreply.github.com>
+Date:   Mon May 22 04:54:21 2023 +0200
+
+    footer changes squashing
+
+commit c37fadcb988c4b297903891f5facc76cf81c4434 (origin/main, git-copy/main, main)
+Author: Agnes IRADUKUNDA <101483232+kunda4@users.noreply.github.com>
+Date:   Mon May 22 04:35:21 2023 +0200
+
+    modify home.html
+
+commit e588c268f5ba0d39875ee216f83573ea5b6b3b18
+Author: Agnes IRADUKUNDA <101483232+kunda4@users.noreply.github.com>
+Date:   Mon May 22 04:08:04 2023 +0200
+
+    add homepage content
+
+commit 2817ff56691a594e61ddcec391d3fb452513d83b
+Author: Agnes IRADUKUNDA <101483232+kunda4@users.noreply.github.com>
+Date:   Mon May 22 02:33:09 2023 +0200
+
+    add some changes on services.html
+Andelas-MBP:git-exercises andelarwanda$ git push
+fatal: The current branch ft/squashing has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/squashing
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+Andelas-MBP:git-exercises andelarwanda$  git push --set-upstream origin ft/squashing
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 546 bytes | 546.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'ft/squashing' on GitHub by visiting:
+remote:      https://github.com/kunda4/git-exercises/pull/new/ft/squashing
+remote: 
+To https://github.com/kunda4/git-exercises.git
+ * [new branch]      ft/squashing -> ft/squashing
+branch 'ft/squashing' set up to track 'origin/ft/squashing'.
+Andelas-MBP:git-exercises andelarwanda$ 
+```
