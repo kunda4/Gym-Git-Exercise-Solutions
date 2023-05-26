@@ -832,3 +832,49 @@ To https://github.com/kunda4/git-cafe-exercise.git
    d1d3f9c..2c13946  main -> main
 Andelas-MBP:git-cafe-exercise andelarwanda$ 
 ```
+## Bundle 6
+### Exercice 1
+```bash
+Andelas-MBP:git-cafe-exercise andelarwanda$ git branch
+* main
+Andelas-MBP:git-cafe-exercise andelarwanda$ git checkout -b feature
+Switched to a new branch 'feature'
+Andelas-MBP:git-cafe-exercise andelarwanda$ touch Menu.html
+Andelas-MBP:git-cafe-exercise andelarwanda$ git status
+On branch feature
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Menu.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+Andelas-MBP:git-cafe-exercise andelarwanda$ git add Menu.html
+Andelas-MBP:git-cafe-exercise andelarwanda$ git commit -m "Add menu.html file"
+[feature b1636df] Add menu.html file
+ 1 file changed, 18 insertions(+)
+ create mode 100644 Menu.html
+Andelas-MBP:git-cafe-exercise andelarwanda$ git push
+fatal: The current branch feature has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin feature
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+Andelas-MBP:git-cafe-exercise andelarwanda$  git push --set-upstream origin feature
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 527 bytes | 527.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'feature' on GitHub by visiting:
+remote:      https://github.com/kunda4/git-cafe-exercise/pull/new/feature
+remote: 
+To https://github.com/kunda4/git-cafe-exercise.git
+ * [new branch]      feature -> feature
+branch 'feature' set up to track 'origin/feature'.
+Andelas-MBP:git-cafe-exercise andelarwanda$ 
+```
