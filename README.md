@@ -878,3 +878,43 @@ To https://github.com/kunda4/git-cafe-exercise.git
 branch 'feature' set up to track 'origin/feature'.
 Andelas-MBP:git-cafe-exercise andelarwanda$ 
 ```
+## Bundle 6
+### Exercice 2
+```bash
+Andelas-MBP:git-cafe-exercise andelarwanda$ git checkout -b fix-bug
+Switched to a new branch 'fix-bug'
+Andelas-MBP:git-cafe-exercise andelarwanda$ git add .
+Andelas-MBP:git-cafe-exercise andelarwanda$ git status
+On branch fix-bug
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index-4.html
+
+Andelas-MBP:git-cafe-exercise andelarwanda$ git commit -m "modify title Menu to Contact"
+[fix-bug 4acf0de] modify title Menu to Contact
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Andelas-MBP:git-cafe-exercise andelarwanda$ git push
+fatal: The current branch fix-bug has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin fix-bug
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+Andelas-MBP:git-cafe-exercise andelarwanda$  git push --set-upstream origin fix-bug
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 338 bytes | 338.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote: 
+remote: Create a pull request for 'fix-bug' on GitHub by visiting:
+remote:      https://github.com/kunda4/git-cafe-exercise/pull/new/fix-bug
+remote: 
+To https://github.com/kunda4/git-cafe-exercise.git
+ * [new branch]      fix-bug -> fix-bug
+branch 'fix-bug' set up to track 'origin/fix-bug'.
+```
