@@ -918,3 +918,41 @@ To https://github.com/kunda4/git-cafe-exercise.git
  * [new branch]      fix-bug -> fix-bug
 branch 'fix-bug' set up to track 'origin/fix-bug'.
 ```
+## Bundle 6
+### Exercice 1
+```bash
+Andelas-MBP:git-cafe-exercise andelarwanda$ git status
+On branch fix-bug
+Your branch is up to date with 'origin/fix-bug'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index-4.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Andelas-MBP:git-cafe-exercise andelarwanda$ git commit -m "modify contact number"
+On branch fix-bug
+Your branch is up to date with 'origin/fix-bug'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index-4.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Andelas-MBP:git-cafe-exercise andelarwanda$ git add .
+Andelas-MBP:git-cafe-exercise andelarwanda$ git commit -m "modify contact number"
+[fix-bug 4fe632c] modify contact number
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Andelas-MBP:git-cafe-exercise andelarwanda$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 331 bytes | 331.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/kunda4/git-cafe-exercise.git
+   4acf0de..4fe632c  fix-bug -> fix-bug
+   ```
